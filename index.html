@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Controle de Gado - Simples</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>Controle de Gado (Simples)</h1></header>
+
+<nav class="tabs">
+  <button data-tab="vacas" class="active">Vacas</button>
+  <button data-tab="partos">Partos</button>
+  <button data-tab="iatf">IATF</button>
+  <button data-tab="sanidade">Sanidade</button>
+  <button data-tab="nutricao">Nutrição</button>
+  <button id="exportBtn">Exportar CSV</button>
+</nav>
+
+<main>
+  <section id="vacas" class="tab active">
+    <form id="form-vaca" class="form-inline">
+      <input name="numero" placeholder="Nº da vaca" required>
+      <input name="nome" placeholder="Nome/Identificação">
+      <input name="idade" placeholder="Idade / Ano">
+      <input name="ultimoParto" placeholder="Último parto (YYYY-MM-DD)">
+      <input name="obs" placeholder="Observações">
+      <button type="submit">Adicionar / Salvar</button>
+    </form>
+    <ul id="lista-vacas" class="list"></ul>
+  </section>
+
+  <section id="partos" class="tab">
+    <form id="form-parto" class="form-inline">
+      <input name="numero" placeholder="Nº da vaca" required>
+      <input name="data" type="date" required>
+      <input name="sexo" placeholder="Sexo bezerro">
+      <input name="peso" placeholder="Peso ao nascer">
+      <input name="obs" placeholder="Observações">
+      <button type="submit">Adicionar Parto</button>
+    </form>
+    <ul id="lista-partos" class="list"></ul>
+  </section>
+
+  <section id="iatf" class="tab">
+    <form id="form-iatf" class="form-inline">
+      <input name="numero" placeholder="Nº da vaca" required>
+      <input name="tipo" placeholder="Tipo (IATF/Monta)" required>
+      <input name="data" type="date" required>
+      <input name="protocolo" placeholder="Protocolo">
+      <input name="touro" placeholder="Touro">
+      <input name="diag" placeholder="Diagnóstico">
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-iatf" class="list"></ul>
+  </section>
+
+  <section id="sanidade" class="tab">
+    <form id="form-sanidade" class="form-inline">
+      <input name="numero" placeholder="Nº da vaca" required>
+      <input name="data" type="date" required>
+      <input name="proc" placeholder="Procedimento/Medicação">
+      <input name="dose" placeholder="Dose">
+      <input name="motivo" placeholder="Motivo">
+      <input name="resp" placeholder="Responsável">
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-sanidade" class="list"></ul>
+  </section>
+
+  <section id="nutricao" class="tab">
+    <form id="form-nutricao" class="form-inline">
+      <input name="numero" placeholder="Nº da vaca" required>
+      <input name="data" type="date" required>
+      <input name="tipo" placeholder="Tipo suplemento">
+      <input name="qtd" placeholder="Quantidade">
+      <input name="lote" placeholder="Lote/Piquete">
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-nutricao" class="list"></ul>
+  </section>
+</main>
+
+<footer>
+  <small>Dados salvos localmente no seu celular (offline).</small>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
